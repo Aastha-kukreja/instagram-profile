@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Profile</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * {
+            font-family: Arial, sans-serif;
+            background-color: white;
+            margin: 0;
+            padding: 0;
+        }
+
+        .profile-container {
+            display: flex;
+        }
+
+        .left {
+            width: 200px;
+            padding: 30px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            border-right: 0.3px solid rgb(84, 84, 84);
+        }
+
+        .right {
+            margin-left: 200px;
+            padding: 20px;
+            flex-grow: 1;
+        }
+
+        .profile-header {
+            display: flex;
+            align-items: center;
+            padding-bottom: 20px;
+        }
+
+        .profile-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .profile-image img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+        }
+
+        .profile-info {
+            flex: 2;
+            padding-left: 20px;
+        }
+
+        .profile-info .username {
+            font-size: 24px;
+        }
+
+        .profile-info .stats {
+            display: flex;
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+
+        .profile-info .edit {
+            display: flex;
+            align-items: center;
+        }
+
+        .button {
+            background-color: rgb(227, 224, 224);
+            color: black;
+            padding: 8px 15px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 12px;
+            margin-left: 10px;
+        }
+
+        .profile-info .stats span {
+            margin-right: 20px;
+        }
+
+        .profile-info .bio {
+            margin: 0;
+        }
+
+        .highlights {
+            display: flex;
+            overflow-x: auto;
+            padding: 20px 0;
+            border-bottom: 1px solid #9a9696;
+            margin-left: 150px; 
+            margin-right: 100px;
+        }
+
+        .highlight {
+            text-align: center;
+            margin-right: 20px;
+        }
+
+        .highlight img {
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            border: 0.3px solid #6c6c6c;
+            margin: 20px;
+        }
+
+        .highlight span {
+            display: block;
+            margin-top: 5px;
+            font-size: 14px;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 5px;
+            padding: 20px 0;
+            margin-left: 160px; 
+            margin-right: 100px;
+        }
+
+        .gallery-item {
+            position: relative;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            display: block;
+        }
+
+        .logo img {
+            width: 150px;
+        }
+
+        .menu {
+            margin: 25px 0px;
+            font-size: 20px;
+        }
+
+        .menu ul {
+            padding-left: 0;
+        }
+
+        .menu ul li {
+            list-style: none;
+            margin: 40px 0px;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .menu ul li span:first-child {
+            margin-right: 10px;
+        }
+
+        .more {
+            margin-top: 100px;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .more span:first-child {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="profile-container">
+        <div class="left">
+            <div class="logo">
+                <img src="https://1000logos.net/wp-content/uploads/2017/02/Logo-Instagram.png" alt="Logo">
+            </div>
+            <div class="menu">
+                <ul>
+                    <li>
+                        <span><i class="fa-solid fa-house"></i></span>
+                        <span>Home</span>
+                    </li>
+                    <li>
+                        <span><i class="fa-solid fa-magnifying-glass"></i></span>
+                        <span>Search</span>
+                    </li>
+                    <li>
+                        <span><i class="fa-regular fa-compass"></i></span>
+                        <span>Explore</span>
+                    </li>
+                    <li>
+                        <span><i class="fa-solid fa-video"></i></span>
+                        <span>Reels</span>
+                    </li>
+                    <li>
+                        <span><i class="fa-solid fa-message"></i></span>
+                        <span>Messages</span>
+                    </li>
+                    <li>
+                        <span><i class="fa-regular fa-heart"></i></span>
+                        <span>Notification</span>
+                    </li>
+                    <li>
+                        <span><i class="fa-solid fa-square-plus"></i></span>
+                        <span>Create</span>
+                    </li>
+                    <li>
+                        <span><i class="fa-solid fa-user"></i></span>
+                        <span>Profile</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="more">
+                <span><i class="fa-solid fa-bars"></i></span>
+                <span>More</span>
+            </div>
+        </div>
+        <div class="right">
+            <header class="profile-header">
+                <div class="profile-image">
+                    <img src="/images/profile.jpg" alt="Profile Picture">
+                </div>
+                <div class="profile-info">
+                    <div class="edit">
+                        <h1 class="username">aasthasaidso</h1>
+                        <button class="button">Edit profile</button>
+                        <button class="button">View archive</button>
+                    </div>
+                    <div class="stats">
+                        <span><strong>5</strong> posts</span>
+                        <span><strong>200</strong> followers</span>
+                        <span><strong>180</strong> following</span>
+                    </div>
+                    <p class="bio">
+                        ~ That girl<br>
+                    </p>
+                </div>
+            </header>
+            <div class="highlights">
+                <div class="highlight">
+                    <img src="/images/post1.jpg" alt="Highlight 1">
+                    <span>&lt;3</span>
+                </div>
+                <div class="highlight">
+                    <img src="/images/post2.jpg" alt="Highlight 2">
+                    <span>~</span>
+                </div>
+                <div class="highlight">
+                    <img src="/images/post3.jpg" alt="Highlight 3">
+                    <span>:)</span>
+                </div>
+            </div>
+            <div class="gallery">
+                <div class="gallery-item"><img src="/images/post1.jpg" alt="Post 1"></div>
+                <div class="gallery-item"><img src="/images/post2.jpg" alt="Post 2"></div>
+                <div class="gallery-item"><img src="/images/post3.jpg" alt="Post 3"></div>
+                <div class="gallery-item"><img src="/images/post4.jpg" alt="Post 4"></div>
+                <div class="gallery-item"><img src="/images/post5.jpg" alt="Post 5"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
